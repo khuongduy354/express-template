@@ -1,20 +1,20 @@
 import { Request, Response } from "express";
 
-const signupAccount = async (req: Request, res: Response) => {
+const signupAccount = async () => {
   try {
   } catch (e) {}
 };
-const signInAccount = async (req: Request, res: Response) => {
-  try {
-  } catch (e) {}
-};
-
-const getUserFromEmail = async (req: Request, res: Response) => {
+const signInAccount = async () => {
   try {
   } catch (e) {}
 };
 
-const updateUser = async (req: Request, res: Response) => {
+const getUserFromEmail = async () => {
+  try {
+  } catch (e) {}
+};
+
+const updateUser = async () => {
   try {
   } catch (e) {}
 };

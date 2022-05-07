@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
 
-const createProduct = async (req: Request, res: Response) => {
+const createProduct = async () => {
   try {
   } catch (e) {}
 };
-const getProduct = async (req: Request, res: Response) => {
+const getProduct = async () => {
   try {
   } catch (e) {}
 };
 
-const updateProduct = async (req: Request, res: Response) => {
+const updateProduct = async () => {
   try {
   } catch (e) {}
 };
-const deleteProduct = async (req: Request, res: Response) => {
+const deleteProduct = async () => {
   try {
   } catch (e) {}
 };
