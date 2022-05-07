@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { FilterQuery } from "mongoose";
 
 const signupAccount = async () => {
   try {

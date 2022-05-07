@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
+import Post from "../models/product.model";
+import { PostDocument } from "../types";
 
-const createProduct = async () => {
+const createProduct = async (input: PostDocument) => {
   try {
+    Post.create(input);
   } catch (e) {}
 };
 const getProduct = async () => {
@@ -11,6 +14,7 @@ const getProduct = async () => {
 
 const updateProduct = async () => {
   try {
+    Post.findOne();
   } catch (e) {}
 };
 const deleteProduct = async () => {
