@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { UserDocument } from "../types/";
+import { UserDocument } from "../types/user";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -10,6 +10,4 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const User = mongoose.model<UserDocument>("User", UserSchema);
-
-export default User;
+export const User = mongoose.model<UserDocument>("User", UserSchema);

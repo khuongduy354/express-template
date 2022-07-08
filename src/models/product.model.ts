@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { PostDocument } from "../types/";
+import { PostDocument } from "../types/product";
 
 const PostSchema = new mongoose.Schema(
   {
@@ -16,6 +16,4 @@ const PostSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Post = mongoose.model<PostDocument>("Post", PostSchema);
-
-export default Post;
+export const Post = mongoose.model<PostDocument>("Post", PostSchema);

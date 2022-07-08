@@ -4,4 +4,5 @@ const router = Router();
 router.post("");
 router.get("/:id");
 router.put("/:id");
-export default router;
+
+export { router as UserRoute };

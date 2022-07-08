@@ -20,7 +20,7 @@ const updateUser = async () => {
   } catch (e) {}
 };
 
-export default {
+export const UserService = {
   signupAccount,
   getUserFromEmail,
   updateUser,

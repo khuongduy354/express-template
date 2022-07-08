@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Post from "../models/product.model";
-import { PostDocument } from "../types";
+import { Post } from "../models/product.model";
+import { PostDocument } from "../types/product";
 
 const createProduct = async (input: PostDocument) => {
   try {
@@ -22,7 +22,7 @@ const deleteProduct = async () => {
   } catch (e) {}
 };
 
-export default {
+export const ProductService = {
   createProduct,
   updateProduct,
   getProduct,

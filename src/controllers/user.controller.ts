@@ -19,7 +19,7 @@ const updateUser = async (req: Request, res: Response) => {
   } catch (e) {}
 };
 
-export default {
+export const UserController = {
   signupAccount,
   getUserFromEmail,
   updateUser,

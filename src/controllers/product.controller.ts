@@ -18,7 +18,7 @@ const deleteProduct = async (req: Request, res: Response) => {
   } catch (e) {}
 };
 
-export default {
+export const ProductController = {
   createProduct,
   updateProduct,
   getProduct,
