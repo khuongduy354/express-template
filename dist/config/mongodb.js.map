@@ -1,0 +1,1 @@
+{"version":3,"file":"mongodb.js","sourceRoot":"","sources":["../../src/config/mongodb.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;AAAA,wDAAgC;AAEhC,SAAsB,YAAY;;QAChC,IAAI,OAAO,CAAC,GAAG,CAAC,MAAM;YAAE,OAAO,MAAM,kBAAQ,CAAC,OAAO,CAAC,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC;QAC1E,OAAO,CAAC,GAAG,CAAC,qBAAqB,CAAC,CAAC;IACrC,CAAC;CAAA;AAHD,oCAGC"}

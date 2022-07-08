@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node src/index.ts",
-    "start": "ts-node dist/index.js",
+    "start": "node dist/index.js",
+    "monit": "pm2 start dist/index.js --watch",
     "build": "tsc"
   },
   "keywords": [],
