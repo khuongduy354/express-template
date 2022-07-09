@@ -1,5 +1,6 @@
 //boostrap expressjs
 import { rateLimit } from "express-rate-limit";
+import { logger } from "./logger";
 import express from "express";
 import "dotenv/config";
 const PORT = process.env.PORT || 3000;
@@ -21,4 +22,15 @@ app.get("/helloworld", (req, res) => {
 
 app.listen(PORT, () => {
   console.log("Server is running on port " + PORT.toString());
+});
+
+// Error handling
+process.on("uncaughtException", (err) => {
+  logger.error(err);
+  process.exit(1);
+});
+
+process.on("unhandledRejection", (err) => {
+  logger.error(err);
+  process.exit(1);
 });
