@@ -1,8 +1,9 @@
 //boostrap expressjs
 import { rateLimit } from "express-rate-limit";
 import { logger } from "./logger";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import "dotenv/config";
+import { AppError, errorHandler } from "./error";
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
@@ -25,6 +26,10 @@ app.listen(PORT, () => {
 });
 
 // Error handling
+app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
+  errorHandler(err, res);
+});
+
 process.on("uncaughtException", (err) => {
   logger.error(err);
   process.exit(1);
