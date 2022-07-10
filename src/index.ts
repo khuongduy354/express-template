@@ -19,6 +19,12 @@ app.use(limiter);
 //testing routes
 app.get("/helloworld", (req, res) => {
   res.send("Hello World");
+  let promise = new Promise(() => {
+    throw new Error("Something went wrong");
+  });
+  promise.catch((e) => {
+    throw e;
+  });
 });
 
 app.listen(PORT, () => {
@@ -26,16 +32,22 @@ app.listen(PORT, () => {
 });
 
 // Error handling
-app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
-  errorHandler(err, res);
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  errorHandler.handleError(err, res);
+  if (!errorHandler.isTrustedError(err)) {
+    process.exit(1);
+  }
+});
+process.on("uncaughtException", (error: Error) => {
+  errorHandler.handleError(error);
+  if (!errorHandler.isTrustedError(error)) {
+    process.exit(1);
+  }
 });
 
-process.on("uncaughtException", (err) => {
-  logger.error(err);
-  process.exit(1);
-});
-
-process.on("unhandledRejection", (err) => {
-  logger.error(err);
-  process.exit(1);
+process.on("unhandledRejection", (reason: Error) => {
+  errorHandler.handleError(reason);
+  if (!errorHandler.isTrustedError(reason)) {
+    process.exit(1);
+  }
 });
