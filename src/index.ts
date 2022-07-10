@@ -38,16 +38,13 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     process.exit(1);
   }
 });
+process.on("unhandledRejection", (reason: Error) => {
+  throw reason;
+});
+
 process.on("uncaughtException", (error: Error) => {
   errorHandler.handleError(error);
   if (!errorHandler.isTrustedError(error)) {
-    process.exit(1);
-  }
-});
-
-process.on("unhandledRejection", (reason: Error) => {
-  errorHandler.handleError(reason);
-  if (!errorHandler.isTrustedError(reason)) {
     process.exit(1);
   }
 });
