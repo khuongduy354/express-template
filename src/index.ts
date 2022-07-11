@@ -19,12 +19,6 @@ app.use(limiter);
 //testing routes
 app.get("/helloworld", (req, res) => {
   res.send("Hello World");
-  let promise = new Promise(() => {
-    throw new Error("Something went wrong");
-  });
-  promise.catch((e) => {
-    throw e;
-  });
 });
 
 app.listen(PORT, () => {
