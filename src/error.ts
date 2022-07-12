@@ -1,5 +1,5 @@
 import { Response } from "express";
-import { logger } from "./logger";
+import { logger } from "./config/logger";
 export class AppError extends Error {
   statusCode: number;
 

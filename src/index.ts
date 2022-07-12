@@ -1,6 +1,6 @@
 //boostrap expressjs
 import { rateLimit } from "express-rate-limit";
-import { logger } from "./logger";
+import { logger } from "./config/logger";
 import express, { NextFunction, Request, Response } from "express";
 import "dotenv/config";
 import { AppError, errorHandler } from "./error";
@@ -22,7 +22,7 @@ app.get("/helloworld", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server is running on port " + PORT.toString());
+  logger.info("Server is running on port " + PORT.toString());
 });
 
 // Error handling
