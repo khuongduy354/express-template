@@ -32,6 +32,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     process.exit(1);
   }
 });
+
 process.on("unhandledRejection", (reason: Error) => {
   throw reason;
 });
