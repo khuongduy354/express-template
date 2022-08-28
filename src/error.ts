@@ -4,6 +4,13 @@ export class AppError extends Error {
   statusCode: number;
 
   constructor(statusCode: number, message: string) {
+    //  if (err instanceof mongoose.Error.ValidationError) {
+    //   statusCode = 400;
+    //   message = err.message;
+    // } else if (err instanceof mongoose.Error.DocumentNotFoundError) {
+    //   statusCode = 404;
+    //   message = err.message;
+    // }
     super(message);
     this.statusCode = statusCode;
     Error.captureStackTrace(this);
